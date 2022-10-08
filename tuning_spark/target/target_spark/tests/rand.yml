@@ -1,0 +1,22 @@
+---
+  # task_name: TODO
+  target: target_spark
+  hosts:
+    master: master
+    slave1: worker1
+    slave2: worker2
+  workload: work.conf
+  exist:
+  tune_os: no
+  tune_app: yes
+  optimizer:
+    name: rand
+    iter_limit: 300
+    reboot_interval: 500
+    repitition: 3
+    extra_vars:
+#acq is ucb/ei/poi
+      acq: ei
+  clients: 16
+  tester: hibench
+
